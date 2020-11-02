@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		var users=[
+			{name:'Tom', gender: 'Female'},
+			{name:'Jerry', gender: 'Female'},
+			{name:'Mickey', gender: 'Male'},
+			{name:'Zoro', gender: 'Male'}
+			];
+		function render(container,items){
+			var htmlItems = Object.keys(items).map(function(key,index){
+				console.log(items[key].name);
+				return '<li>' + items[key].name+ '</li>';
+			});
+			var html1= htmlItems.join(' ');
+			container.html(html1);
+		}
+		var userList = $('#userList');
+		render(userList,users);
+	</script>
+</head>
+<body>
+	<div>
+		<div>
+			<label for="genderFilter">Gender</label>
+			<SELECT class = "formControl" id="genderFilter">
+				<option value="null">All</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+			</SELECT>
+		</div>
+	</div>
+	<ul id="userList">
+	</ul>
+
+</body>
+</html>
